@@ -80,12 +80,12 @@ sub dataIsReady()
 
   m.global.AddField("RSG_analytics", "node", false)
   m.global.RSG_analytics = createObject("roSGNode", "Roku_Analytics:AnalyticsNode")
-  m.global.RSG_analytics.debug = true
+  m.global.RSG_analytics.debug = false
   m.global.RSG_analytics.init = {
       Google: {
           trackingID: "UA-115638141-13"
           defaultParams: {
-              an: "Calm Radio"
+              an: "Scrolling Pano"
           }
       }
   }
