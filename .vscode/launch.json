@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "brightscript",
+            "request": "launch",
+            "name": "BrightScript Debug: Launch",
+            "stopOnEntry": false,
+            "host": "10.0.0.117",
+            "password": "calm",
+            "files": [
+                "manifest",
+                "source/**/*.*",
+                "components/**/*.*",
+                "images/**/*.*",
+                "locale/**/*.*",
+                "source_voice_adapter/**/*.*",
+            ],
+            "rootDir": "${workspaceFolder}",
+            "outDir":"${workspaceFolder}/out",
+            "enableDebuggerAutoRecovery": true,
+            "stopDebuggerOnAppExit": true
+        } 
+    ]
+}

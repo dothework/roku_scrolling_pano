@@ -1,0 +1,17 @@
+# Roku Channel Manifest File
+# https://developer.roku.com/en-us/docs/developer-program/getting-started/architecture/channel-manifest.md
+
+screensaver_title=Scrolling Panoramic Screensaver
+major_version=1
+minor_version=0
+build_version=34
+ui_resolutions=hd,fhd
+rsg_version=1.2
+sg_component_libs_required=Roku_Analytics
+
+##   Channel Assets
+###  Main Menu Icons / Channel Poster Artwork
+#### Image sizes are FHD: 540x405px | HD: 290x218px | SD: 214x144px
+mm_icon_focus_fhd=pkg:/images/icon_focus_fhd.png
+mm_icon_focus_hd=pkg:/images/icon_focus_hd.png
+#mm_icon_focus_sd=pkg:/images/icon_focus_sd.png

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<component name="FetchImageAPI" extends="Task">
+
+	<interface>
+		<field id="uri" type="string"/>
+		<field id="filename" type="string"/>
+		<field id="lastfilename" type="string"/>
+		<field id="poster" type="string"/>
+		<field id="transferComplete" type="bool" value="false" alwaysNotify="true" />
+	</interface>
+
+	<script type="text/brightscript" uri="pkg:/components/FetchImageAPI.brs" />
+
+</component>

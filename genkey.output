@@ -1,0 +1,41 @@
+12/10/2020
+markcarpenter@Marks-MBP calm_roku % telnet 10.0.0.117 8080                                                              
+Trying 10.0.0.117...
+Connected to 10.0.0.117.
+Escape character is '^]'.
+YH00ER207543 (Roku Streaming Stick+ - YH00ER207543 - 9.4.0.4190)
+>genkey
+...........+++++
+........................................+++++
+Password: TaYIUL455Xxe/TsztAGaww==
+DevID: 4d75eaecac83bebc4812b082c1e0eb36961ab1fd
+>
+
+05/20/2020
+markcarpenter@Marks-MacBook-Pro calm_roku % telnet 10.0.0.91 8080
+Trying 10.0.0.91...
+Connected to 10.0.0.91.
+Escape character is '^]'.
+YF001A943490 (Roku Streaming Stick - 9.2.0.4806)
+>genkey
+....+++
+..............+++
+Password: SXCAgvybDAK2x1WjwNZKuQ==
+DevID: d2cbf6f1b1c41305f618846f5423a14a20094c8e
+>
+
+05/17/2020
+markcarpenter@Marks-MacBook-Pro calm_roku % telnet 10.0.0.91 8080
+Trying 10.0.0.91...
+Connected to 10.0.0.91.
+Escape character is '^]'.
+YF001A943490 (Roku Streaming Stick - 9.2.0.4806)
+>genkey
+.....................+++
+.....+++
+Password: 5/wlDPadVoXfIKEpJDa9Cw==
+DevID: 52733d02095a82dd97dfa61c84e5891e48544f82
+>
+
+
+curl http://10.0.0.117:8060/voice/inject -G --data-urlencode voice.json -X POST

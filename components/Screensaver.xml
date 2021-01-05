@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Screensaver" extends="Scene" >
+<script type="text/brightscript" uri = "pkg:/components/Screensaver.brs"/>
+	<children>
+		<FetchImageAPI id="FetchImageAPI" />
+		<FetchImageListAPI id="FetchImageListAPI" />
+		<Timer id="timer" repeat="true" duration="16" />
+		<Poster
+			id = "Background"
+			height = "720"
+			width = "1280"
+		/>
+		<Poster 
+			id = "Poster1"
+			uri = ""
+			height = "720"
+			width = "2560"
+			loadHeight = "720"
+			loadWidth = "2560"
+			opacity = "1"
+			translation = "[0,0]"
+		/>
+		<Poster 
+			id = "Poster2"
+			uri = ""
+			height = "720"
+			width = "2560"
+			loadHeight = "720"
+			loadWidth = "2560"
+			opacity = "1"
+			translation = "[2560,0]"
+		/>
+		<SequentialAnimation 
+			id = "masterAnimation" 
+			repeat = "true">
+			<Animation 
+				id = "PA1"
+				duration = "64" 
+				easeFunction = "linear" >
+				<Vector2DFieldInterpolator
+					id = "2D11"
+					fieldToInterp="Poster1.translation"
+					key="[0,1]"
+					keyValue="[[0,0],[-2560,0]]"
+				/>
+				<Vector2DFieldInterpolator
+					id = "2D12"
+					fieldToInterp="Poster2.translation"
+					key="[0,1]"
+					keyValue="[[2560,0],[0,0]]"
+				/>
+			</Animation>
+			<Animation 
+				id = "PA2"
+				duration = "64" 
+				easeFunction = "linear" >
+				<Vector2DFieldInterpolator
+					id = "2D21"
+					fieldToInterp="Poster1.translation"
+					key="[0,1]"
+					keyValue="[[2560,0],[0,0]]"
+				/>
+				<Vector2DFieldInterpolator
+					id = "2D22"
+					fieldToInterp="Poster2.translation"
+					key="[0,1]"
+					keyValue="[[0,0],[-2560,0]]"
+				/>
+			</Animation>
+		</SequentialAnimation>
+	</children>
+</component>
