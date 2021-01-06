@@ -8,6 +8,7 @@ build_version=34
 ui_resolutions=hd,fhd
 rsg_version=1.2
 sg_component_libs_required=Roku_Analytics
+bs_libs_required=roku_ads_lib
 
 ##   Channel Assets
 ###  Main Menu Icons / Channel Poster Artwork

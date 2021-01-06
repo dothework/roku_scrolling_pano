@@ -9,6 +9,7 @@ Function init()
 
   m.global.AddField("photosRaw", "array", false)
   m.global.ObserveField("photosRaw", "dataIsReady")
+  m.global.AddField("lastIndex", "integer", false)
 
   ' Initialize else it may be accessed too early
   m.masterAnimation = m.top.findNode("masterAnimation")
@@ -63,9 +64,11 @@ sub dataIsReady()
     ' ?"must fetch data... ugh"
     end 
   end if
+  ' photoCount is used as the upper bounds of array index - must adjsut for zero based
   m.photoCount = m.global.photosRaw.Count()
   ' Fetch image data for first box.
-  imageA = m.global.photosRaw[rnd(m.photoCount)-1]
+  m.global.lastIndex = rnd(m.photoCount)-1
+  imageA = m.global.photosRaw[m.global.lastIndex]
   ' Set background color to match incoming image
   m.top.backgroundColor = imageA.color
 
@@ -120,17 +123,35 @@ sub timerFired()
   ' load new random images in posters that are now offscreen
   ' TODO: do not place the same image on the screen twice
   if m.loopCount = 0 then
+    idx = rnd(m.photoCount)-1
+    while true
+      if m.global.lastIndex = idx then
+        idx = rnd(m.photoCount)-1
+      else 
+        exit while
+      end if
+    end while
+    m.global.lastIndex = idx
     m.FetchImageAPI.poster = "2"
     m.FetchImageAPI.transferComplete = false
-    m.FetchImageAPI.uri = m.global.photosRaw[rnd(m.photoCount)-1].urls.small
+    m.FetchImageAPI.uri = m.global.photosRaw[idx].urls.small
     m.FetchImageAPI.filename = ("tmp:/poster%1.jpg").replace("%1",Str(rnd(0)).replace(" ", ""))
     m.FetchImageAPI.lastfilename = m.Poster2.uri
     m.FetchImageAPI.functionName = "uriImageToTemp"
     m.FetchImageAPI.control = "RUN"
   else if m.loopCount = 4 then
+    idx = rnd(m.photoCount)-1
+    while true
+      if m.global.lastIndex = idx then
+        idx = rnd(m.photoCount)-1
+      else 
+        exit while
+      end if
+    end while
+    m.global.lastIndex = idx
     m.FetchImageAPI.poster = "1"
     m.FetchImageAPI.transferComplete = false
-    m.FetchImageAPI.uri = m.global.photosRaw[rnd(m.photoCount)-1].urls.small
+    m.FetchImageAPI.uri = m.global.photosRaw[idx].urls.small
     m.FetchImageAPI.filename = ("tmp:/poster%1.jpg").replace("%1",Str(rnd(0)).replace(" ", ""))
     m.FetchImageAPI.lastfilename = m.Poster2.uri
     m.FetchImageAPI.functionName = "uriImageToTemp"

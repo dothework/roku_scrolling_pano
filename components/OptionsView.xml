@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component 
+name="OptionsView" 
+    extends="BaseScene"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+        <field id="buttons" type="node" alias="buttons.content" />
+        <field id="buttonFocused" type="integer" alias="buttons.itemFocused" />
+        <field id="buttonSelected" type="integer" alias="buttons.itemSelected" onChange="onButtonSelected" />
+    </interface>
+
+    <script type="text/brightscript" uri="OptionsView.brs" />
+    <script type="text/brightscript" uri="../source/Utils.brs" />
+
+    <children>
+        <!-- <ChannelStore id="store" command="getCatalog" /> -->
+        <Poster
+			id="backgroundPoster"
+            translation="[0,0]"
+			uri="pkg:/images/roku_splash_f.png"
+			width="1920"
+			height="1080"/>
+        <Poster
+			id="logo"
+            translation="[128,-22]"
+			uri="pkg:/images/overhang_logo.png"
+			width="340"
+			height="100"/>
+
+        <SimpleLabel
+            id="title"
+            translation="[128,180]"
+            fontUri="font:BoldSystemFontFile"
+            fontSize="44"
+            color="0xFFFFFF"
+            text="Calm Radio Account"
+        />
+
+        <Label
+            id="usernameLabel"
+            translation="[128,250]"
+            wrap="true"
+            font="font:MediumSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="Username:"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+        <Label
+            id="username"
+            translation="[265,250]"
+            wrap="true"
+            font="font:MediumBoldSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="you@me.com"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+        <Label
+            id="subscriptionLabel"
+            translation="[128,290]"
+            wrap="true"
+            font="font:MediumSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="Subscription:"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+        <Label
+            id="subscription"
+            translation="[300,290]"
+            wrap="true"
+            font="font:MediumBoldSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="Monthly"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+                <Label
+            id="versionLabel"
+            translation="[128,330]"
+            wrap="true"
+            font="font:SmallSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="Channel Version:"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+        <Label
+            id="versionValue"
+            translation="[310,330]"
+            wrap="true"
+            font="font:SmallBoldSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="2.4.00877"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+         <!-- <SimpleLabel
+            id="upgradeLabel"
+            translation="[750,280]"
+            fontUri="font:BoldSystemFontFile"
+            fontSize="30"
+            color="0xFFFFFF"
+            text="Your Upgrade Options"
+        />
+        <Rectangle
+            id="lineSeparator"
+            color="0xFFFFF"
+            width="400"
+            height="2"
+            translation="[750,325]" />
+
+        <Label
+            id="upgradeText1"
+            translation="[750,345]"
+            wrap="true"
+            font="font:MediumSystemFont"
+            color="0xFFFFFF"
+            maxLines="1"
+            text="Monthly - $9.99"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+        <Label
+            id="upgradeText2"
+            translation="[750,380]"
+            wrap="true"
+            font="font:MediumSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="Over 350 Ad Free Channels"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+        <Label
+            id="upgradeText3"
+            translation="[750,430]"
+            wrap="true"
+            font="font:MediumSystemFont"
+            color="0xFFFFFF"
+            maxLines="1"
+            text="Annual - $99.99"
+            ellipsizeOnBoundary="true"
+            width="380"
+        />
+
+        <Label
+            id="upgradeText4"
+            translation="[750,465]"
+            wrap="true"
+            font="font:MediumSystemFont"
+            color="0xFFFFFF"
+            maxLines="3"
+            text="Save almost $20.00!"
+            ellipsizeOnBoundary="true"
+            width="380"
+        /> -->
+
+        <RadioButtonList
+            id="buttons"
+            numRows="2"
+            translation="[140, 395]"
+            color="0xFFFFFF"
+            itemSpacing="[0,10]"
+            itemSize="[400, 48]" /> 
+    </children>
+</component>
