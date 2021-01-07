@@ -6,7 +6,8 @@
 		<field id="uri" type="string"/>
 		<field id="filename" type="string"/>
 		<field id="lastfilename" type="string"/>
-		<field id="poster" type="string"/>
+		<field id="poster" type="string"/> 
+		<field id="attributionText" type="string"/> 
 		<field id="transferComplete" type="bool" value="false" alwaysNotify="true" />
 	</interface>
 
