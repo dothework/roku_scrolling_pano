@@ -73,7 +73,7 @@ sub dataIsReady()
   currentImage = m.global.photosRaw[m.global.lastIndex]
   ' Set background color to match incoming image
   m.top.backgroundColor = currentImage.color
-  m.FetchImageAPI.attributionText = ("@%1 / Unsplash").replace("%1",currentImage.user.username)
+  ' m.FetchImageAPI.attributionText = ("@%1 / Unsplash").replace("%1",currentImage.user.username)
   m.timer.control = "start"
   m.FetchImageAPI.uri = currentImage.urls.small
   m.FetchImageAPI.poster = "1"
@@ -104,12 +104,10 @@ sub onTransferComplete()
     ' ?"Memory Level",di.GetGeneralMemoryLevel()
     if m.FetchImageAPI.poster = "1" then 
       m.Poster1.uri = m.FetchImageAPI.filename
-      m.attributionText1.text =  m.FetchImageAPI.attributionText
-      ? m.attributionText1.text
+      ' m.attributionText1.text =  m.FetchImageAPI.attributionText
     else 
       m.Poster2.uri = m.FetchImageAPI.filename
-      m.attributionText1.text =  m.FetchImageAPI.attributionText
-      ?m.attributionText1.text
+      ' m.attributionText1.text =  m.FetchImageAPI.attributionText
     end if 
     if m.masterAnimation.control <> "start" then
       m.masterAnimation.control = "start"
@@ -120,9 +118,6 @@ end sub
 
 
 sub timerFired()
-  ? "m.attributionText1.text", m.attributionText1.text
-  ' ? "m.attributionText2.text", m.attributionText2.text
-  ' ?"m.loopCount", m.loopCount
   ' onbly run if animation is running
   ' if m.masterAnimation.state <> "running" then 
   '   end
@@ -144,7 +139,7 @@ sub timerFired()
     m.FetchImageAPI.transferComplete = false
     currentImage = m.global.photosRaw[idx]
     m.FetchImageAPI.uri = currentImage.urls.small
-    m.FetchImageAPI.attributionText = ("@%1 / Unsplash").replace("%1",currentImage.user.username)
+    ' m.FetchImageAPI.attributionText = ("@%1 / Unsplash").replace("%1",currentImage.user.username)
     m.FetchImageAPI.filename = ("tmp:/poster%1.jpg").replace("%1",Str(rnd(0)).replace(" ", ""))
     m.FetchImageAPI.lastfilename = m.Poster2.uri
     m.FetchImageAPI.functionName = "uriImageToTemp"
@@ -163,7 +158,7 @@ sub timerFired()
     m.FetchImageAPI.transferComplete = false
     currentImage = m.global.photosRaw[idx]
     m.FetchImageAPI.uri = currentImage.urls.small
-    m.FetchImageAPI.attributionText = ("@%1 / Unsplash").replace("%1",currentImage.user.username)
+    ' m.FetchImageAPI.attributionText = ("@%1 / Unsplash").replace("%1",currentImage.user.username)
     m.FetchImageAPI.filename = ("tmp:/poster%1.jpg").replace("%1",Str(rnd(0)).replace(" ", ""))
     m.FetchImageAPI.lastfilename = m.Poster2.uri
     m.FetchImageAPI.functionName = "uriImageToTemp"
